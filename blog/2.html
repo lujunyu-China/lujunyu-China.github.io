@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洛谷P1001题解 | lujunyu-China的博客</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4ecdc4;
+            --secondary: #45b7d1;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .blog-header {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 20px 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+        
+        .blog-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .blog-meta {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: -50px auto 40px;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .blog-content {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .blog-content h2 {
+            color: var(--primary);
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78,205,196,0.3);
+            color: white;
+        }
+        
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: white;
+            color: var(--primary);
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+        }
+        
+        .back-home:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <a href="index.html" class="back-home">
+        <i class="fas fa-arrow-left"></i> 返回博客列表
+    </a>
+    
+    <!-- 博客头部 -->
+    <header class="blog-header">
+        <div class="blog-container">
+            <h1 class="blog-title">洛谷P1001 - A+B Problem 题解</h1>
+            <p class="lead">C++程序员的第一道题</p>
+        </div>
+    </header>
+    
+    <!-- 博客内容 -->
+    <main class="blog-container">
+        <!-- 元信息 -->
+        <div class="blog-meta">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><i class="far fa-calendar"></i> 发布日期：2026年1月3日</p>
+                    <p><i class="far fa-clock"></i> 阅读时间：约5分钟</p>
+                </div>
+                <div class="col-md-6">
+                    <p><i class="fas fa-tags"></i> 标签：C++、洛谷、算法入门</p>
+                    <p><i class="fas fa-user"></i> 作者：lujunyu-China</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 正文内容 -->
+        <article class="blog-content">
+            <h2>📖 题目描述</h2>
+            <p>输入两个整数 a 和 b，输出它们的和（|a|,|b| ≤ 10^9）。</p>
+            
+            <h2>💡 解题思路</h2>
+            <p>这道题是算法竞赛的"Hello World"，主要考察：</p>
+            <ol>
+                <li>基本的输入输出操作</li>
+                <li>变量的定义和使用</li>
+                <li>简单的算术运算</li>
+            </ol>
+            
+            <h2>🖥️ C++ 代码实现</h2>
+            <div class="code-block">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;        // 读取两个整数
+    cout << a + b << endl; // 输出它们的和
+    return 0;
+}
+            </div>
+            
+            <h3>代码解析</h3>
+            <ul>
+                <li><code>#include &lt;iostream&gt;</code>：输入输出流头文件</li>
+                <li><code>using namespace std;</code>：使用标准命名空间</li>
+                <li><code>cin >> a >> b</code>：从标准输入读取数据</li>
+                <li><code>cout << a + b << endl</code>：输出结果并换行</li>
+            </ul>
+            
+            <h2>🚀 扩展学习</h2>
+            <p>学会了A+B之后，可以尝试：</p>
+            <ul>
+                <li>计算两个数的差、积、商</li>
+                <li>输入三个数，计算它们的和</li>
+                <li>使用<code>long long</code>类型处理更大数据</li>
+                <li>尝试洛谷P1002（过河卒）等更复杂的题目</li>
+            </ul>
+            
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-lightbulb"></i>
+                <strong>小贴士：</strong>这道题虽然简单，但却是算法竞赛的起点。从A+B开始，一步步挑战更难的题目吧！
+            </div>
+        </article>
+        
+        <!-- 导航按钮 -->
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">
+                <i class="fas fa-arrow-left"></i> 返回博客列表
+            </a>
+            <a href="1.html" class="nav-btn">
+                上一篇：GitHub网站 <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📝 P1001题解加载完成');
+        });
+    </script>
+</body>
+</html>
