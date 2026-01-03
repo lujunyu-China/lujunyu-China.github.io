@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建我的第一个GitHub网站 - lujunyu-China的博客</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .blog-header {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .blog-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .blog-meta {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .blog-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .blog-content h2 {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .blog-content h3 {
+            color: var(--secondary);
+            margin: 25px 0 12px;
+        }
+        
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+        
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .blog-content li {
+            margin-bottom: 8px;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e9ecef;
+            color: #495057;
+            padding: 5px 15px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: white;
+            color: var(--primary);
+            padding: 10px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .back-home:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <a href="index.html" class="back-home">
+        <i class="fas fa-arrow-left"></i> 博客列表
+    </a>
+    
+    <!-- 博客头部 -->
+    <header class="blog-header">
+        <div class="blog-container">
+            <h1 class="blog-title">创建我的第一个GitHub网站</h1>
+            <p class="lead">从零开始学习网站搭建的心路历程</p>
+        </div>
+    </header>
+    
+    <!-- 博客内容 -->
+    <main class="blog-container">
+        <!-- 元信息 -->
+        <div class="blog-meta">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><i class="far fa-calendar"></i> 发布日期：2024年1月20日</p>
+                    <p><i class="far fa-clock"></i> 阅读时间：约5分钟</p>
+                </div>
+                <div class="col-md-6">
+                    <p><i class="fas fa-eye"></i> 阅读次数：15次</p>
+                    <p><i class="fas fa-file-word"></i> 字数：约1200字</p>
+                </div>
+            </div>
+            <div class="mt-3">
+                <span class="tag" style="background: #e3f2fd; color: #1565c0;">GitHub</span>
+                <span class="tag" style="background: #e8f5e9; color: #2e7d32;">学习</span>
+                <span class="tag" style="background: #f3e5f5; color: #7b1fa2;">HTML</span>
+                <span class="tag" style="background: #fff3e0; color: #e65100;">CSS</span>
+            </div>
+        </div>
+        
+        <!-- 正文内容 -->
+        <article class="blog-content">
+            <h2>🎉 开始的契机</h2>
+            <p>作为一个编程爱好者，我一直梦想着拥有自己的网站。看到很多程序员都有自己的GitHub Pages网站，我也想尝试一下！</p>
+            
+            <h2>📚 学习过程</h2>
+            <h3>1. HTML基础</h3>
+            <p>首先从最基础的HTML开始学习。HTML就像是网站的骨架，定义了网页的结构。</p>
+            
+            <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;我的第一个网站&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;这是我的第一个网页&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+            
+            <h3>2. CSS美化</h3>
+            <p>学会了HTML后，开始学习CSS来美化网页。CSS就像是网站的衣服，让网页变得好看。</p>
+            
+            <div class="code-block">
+/* 简单的CSS样式 */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    color: #333;
+}
+
+h1 {
+    color: #ff6b6b;
+    text-align: center;
+}
+            </div>
+            
+            <h3>3. GitHub Pages部署</h3>
+            <p>这是最激动人心的部分！学习使用GitHub Pages来部署网站：</p>
+            <ol>
+                <li>创建GitHub账号和仓库</li>
+                <li>编写HTML和CSS代码</li>
+                <li>使用Git提交代码</li>
+                <li>访问 https://用户名.github.io</li>
+            </ol>
+            
+            <h2>💡 遇到的问题和解决</h2>
+            <p>在搭建过程中遇到了不少问题：</p>
+            <ul>
+                <li><strong>图片不显示：</strong>路径写错了，需要检查文件路径</li>
+                <li><strong>样式不生效：</strong>CSS选择器写错了</li>
+                <li><strong>Git提交失败：</strong>需要配置Git用户名和邮箱</li>
+                <li><strong>网站访问不了：</strong>需要等待GitHub Pages部署完成</li>
+            </ul>
+            
+            <h2>🚀 成果展示</h2>
+            <p>经过努力，我的第一个网站终于上线了！可以通过以下地址访问：</p>
+            <p style="text-align: center;">
+                <a href="https://lujunyu-china.github.io" target="_blank" 
+                   style="color: var(--primary); font-weight: bold; font-size: 1.2em;">
+                    https://lujunyu-china.github.io
+                </a>
+            </p>
+            
+            <h2>🎯 心得体会</h2>
+            <p>通过这次实践，我学到了：</p>
+            <ol>
+                <li>编程需要耐心和坚持</li>
+                <li>遇到问题要多搜索、多尝试</li>
+                <li>实践是最好的学习方法</li>
+                <li>分享和记录能帮助巩固知识</li>
+            </ol>
+            
+            <p style="font-style: italic; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                <i class="fas fa-quote-left" style="color: var(--primary);"></i>
+                编程就像搭积木，一行行代码堆砌出神奇的世界。不怕困难，每天进步，小学生也能成为编程小高手！
+            </p>
+        </article>
+        
+        <!-- 导航按钮 -->
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">
+                <i class="fas fa-list"></i> 返回博客列表
+            </a>
+            <a href="blog2.html" class="nav-btn">
+                下一篇：MC服务器搭建 <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="blog-container text-center">
+            <p><i class="fas fa-copyright"></i> 2026 lujunyu-China</p>
+            <p class="small">本文为原创内容，转载请注明出处</p>
+        </div>
+    </footer>
+    
+    <script>
+        // 简单的阅读计数
+        let views = localStorage.getItem('blog1_views') || 15;
+        views++;
+        localStorage.setItem('blog1_views', views);
+        
+        // 更新显示
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewElement = document.querySelector('.blog-meta .fa-eye').parentElement;
+            if (viewElement) {
+                viewElement.innerHTML = `<i class="fas fa-eye"></i> 阅读次数：${views}次`;
+            }
+            
+            console.log('📝 博客文章：创建我的第一个GitHub网站');
+            console.log('👦 作者：lujunyu-China');
+        });
+    </script>
+</body>
+</html>
