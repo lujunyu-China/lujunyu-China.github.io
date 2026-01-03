@@ -55,12 +55,21 @@
         }
     </style>
 </head>
-<body>
+<body id="home">
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4);">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-star"></i> lujunyu-China的个人网站</a>
+            <a class="navbar-brand" href="#home"><i class="fas fa-star"></i> lujunyu-China的个人网站</a>
             <span class="kid-badge">小学生编程爱好者</span>
+            
+            <!-- 添加导航链接 -->
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link text-white" href="#home">首页</a>
+                <a class="nav-link text-white" href="blog/index.html">
+                    <i class="fas fa-blog"></i> 博客
+                </a>
+                <a class="nav-link text-white" href="#projects">项目</a>
+            </div>
         </div>
     </nav>
 
@@ -137,7 +146,7 @@
     </section>
 
     <!-- 项目展示 -->
-    <section class="container my-5">
+    <section class="container my-5" id="projects">
         <h2 class="text-center mb-5"><i class="fas fa-project-diagram"></i> 我的小项目</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
@@ -196,16 +205,100 @@
         </div>
     </section>
 
+    <!-- 博客摘要 -->
+    <section class="container my-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h2 class="text-center mb-4">
+                    <i class="fas fa-blog"></i> 
+                    最新博客 
+                    <span class="badge bg-primary">New</span>
+                </h2>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm project-card">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: var(--primary);">
+                                    <i class="fas fa-globe"></i> 创建我的第一个GitHub网站
+                                </h5>
+                                <p class="card-text text-muted small">
+                                    记录从零开始搭建个人网站的完整过程，分享学习HTML、CSS和GitHub Pages的经验心得。
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <small class="text-muted">
+                                        <i class="far fa-calendar"></i> 2026-01-03
+                                    </small>
+                                    <a href="blog/1.html" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-book-open"></i> 阅读全文
+                                    </a>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="badge bg-light text-dark me-1">GitHub</span>
+                                    <span class="badge bg-light text-dark me-1">HTML</span>
+                                    <span class="badge bg-light text-dark me-1">学习</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm project-card">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: var(--secondary);">
+                                    <i class="fas fa-code"></i> 洛谷P1001题解
+                                </h5>
+                                <p class="card-text text-muted small">
+                                    详细讲解洛谷P1001题目的解法和思路，包含多种解法和代码示例。
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <small class="text-muted">
+                                        <i class="far fa-calendar"></i> 2026-01-03
+                                    </small>
+                                    <a href="blog/2.html" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-book-open"></i> 阅读全文
+                                    </a>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="badge bg-light text-dark me-1">洛谷</span>
+                                    <span class="badge bg-light text-dark me-1">C++</span>
+                                    <span class="badge bg-light text-dark me-1">算法</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="blog/index.html" class="btn btn-primary">
+                        <i class="fas fa-book-open"></i> 查看所有博客文章
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 页脚 -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container text-center">
+            <div class="mb-3">
+                <a href="#home" class="btn btn-sm btn-outline-light mx-1">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="blog/index.html" class="btn btn-sm btn-outline-light mx-1">
+                    <i class="fas fa-blog"></i> 博客
+                </a>
+                <a href="#projects" class="btn btn-sm btn-outline-light mx-1">
+                    <i class="fas fa-project-diagram"></i> 项目
+                </a>
+            </div>
             <p><i class="fas fa-copyright"></i> 2026 lujunyu-China</p>
             <p>
                 <i class="fas fa-school"></i> NNMZPS | 
                 <i class="fas fa-heart"></i> 编程爱好者 | 
                 <i class="fab fa-qq"></i> QQ：3839653829
             </p>
-            <p class="small">网站访问次数：<span id="visitor-count">1</span>（你是第一个访客！）</p>
+            <p class="small">网站访问次数：<span id="visitor-count">1</span></p>
             <div class="mt-3">
                 <button class="btn btn-sm btn-outline-light" onclick="addVisitor()">
                     <i class="fas fa-thumbs-up"></i> 点个赞
@@ -231,6 +324,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('🎉 欢迎来到lujunyu-China的个人主页！');
             console.log('💡 提示：小学生编程，大大梦想！');
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
