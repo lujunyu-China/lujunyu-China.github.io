@@ -195,53 +195,7 @@
             </p>
         </div>
     </section>
-    <!-- 博客板块 -->
-<section class="container my-5">
-    <div class="card shadow-sm border-0">
-        <div class="card-body">
-            <h2 class="text-center mb-4"><i class="fas fa-blog"></i> 最新博客</h2>
-            
-            <div id="blog-preview" class="row">
-                <!-- 博客将通过JavaScript动态生成 -->
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="blog.html" class="btn btn-primary">
-                    <i class="fas fa-book-open"></i> 查看所有博客
-                </a>
-                <button class="btn btn-outline-primary" onclick="showWriteBlog()">
-                    <i class="fas fa-pen-fancy"></i> 写新博客
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- 写博客表单（隐藏） -->
-<div class="modal fade" id="writeBlogModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">写新博客</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="blogForm">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="blogTitle" placeholder="标题" required>
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="blogContent" rows="8" placeholder="内容..." required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="blogTags" placeholder="标签（用逗号分隔）">
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">发布</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
     <!-- 页脚 -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container text-center">
