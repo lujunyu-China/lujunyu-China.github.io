@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的简历 | GitHub Pages</title>
+    <title>卢俊羽的个人主页 | 小学生编程爱好者</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary: #3498db;
-            --secondary: #2c3e50;
+            --primary: #ff6b6b;  /* 更活泼的颜色 */
+            --secondary: #4ecdc4;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
         }
         
         .profile-img {
@@ -28,86 +28,209 @@
         .skill-badge {
             background: var(--primary);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 8px 16px;
+            border-radius: 25px;
             margin: 5px;
             display: inline-block;
+            font-size: 14px;
         }
         
         .project-card {
             transition: transform 0.3s;
             border: none;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
         }
         
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02);
+        }
+        
+        .kid-badge {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4);">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-code"></i> 我的空间</a>
+            <a class="navbar-brand" href="#"><i class="fas fa-star"></i> 卢俊羽的小天地</a>
+            <span class="kid-badge">小学生编程爱好者</span>
         </div>
     </nav>
 
     <!-- 个人介绍 -->
     <section class="container my-5">
         <div class="text-center">
-            <img src="https://via.placeholder.com/150" alt="头像" class="profile-img mb-3">
-            <h1 class="display-4">你好，我是开发者</h1>
-            <p class="lead text-muted">前端开发者 | 技术爱好者</p>
+            <!-- 你可以用自己喜欢的图片替换这个链接 -->
+            <img src="https://cdn.pixabay.com/photo/2016/11/29/12/30/child-1869265_1280.jpg" alt="小学生编程" class="profile-img mb-3">
+            <h1 class="display-4">👋 你好，我是卢俊羽！</h1>
+            <p class="lead text-muted">
+                <i class="fas fa-graduation-cap"></i> 小学生 | 
+                <i class="fas fa-code"></i> 编程爱好者 | 
+                <i class="fas fa-gamepad"></i> Minecraft玩家
+            </p>
             <div class="mt-3">
-                <a href="https://github.com/你的用户名" class="btn btn-outline-primary me-2">
-                    <i class="fab fa-github"></i> GitHub
+                <a href="https://github.com/lujunyu-China" class="btn btn-outline-primary me-2">
+                    <i class="fab fa-github"></i> 我的GitHub
                 </a>
-                <a href="mailto:你的邮箱" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i> 联系我
+                <a href="mailto:lujunyu@example.com" class="btn" style="background: var(--primary); color: white;">
+                    <i class="fas fa-envelope"></i> 给我发邮件
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 技能 -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4"><i class="fas fa-cogs"></i> 技能</h2>
-            <div class="text-center">
-                <span class="skill-badge">HTML/CSS</span>
-                <span class="skill-badge">JavaScript</span>
-                <span class="skill-badge">Git</span>
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">React</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 项目展示 -->
+    <!-- 关于我 -->
     <section class="container my-5">
-        <h2 class="text-center mb-5"><i class="fas fa-project-diagram"></i> 项目展示</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card project-card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">个人网站</h5>
-                        <p class="card-text">使用GitHub Pages搭建的静态网站</p>
-                        <a href="#" class="btn btn-outline-primary">查看详情</a>
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h2 class="text-center mb-4"><i class="fas fa-user"></i> 关于我</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-heart"></i> 我的爱好</h4>
+                        <ul>
+                            <li>💻 学习编程和计算机知识</li>
+                            <li>🎮 玩Minecraft和搭建服务器</li>
+                            <li>📚 阅读科技类书籍</li>
+                            <li>🧩 解算法题目</li>
+                            <li>⚡ 探索新奇的科技产品</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-trophy"></i> 我的目标</h4>
+                        <ul>
+                            <li>🌟 成为厉害的小程序员</li>
+                            <li>🚀 搭建自己的游戏服务器</li>
+                            <li>📱 制作一个手机App</li>
+                            <li>🌐 学习网站开发</li>
+                            <li>🎯 参加编程比赛</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 技能 -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4"><i class="fas fa-cogs"></i> 我在学习的技能</h2>
+        <div class="text-center">
+            <span class="skill-badge">HTML/CSS</span>
+            <span class="skill-badge">JavaScript基础</span>
+            <span class="skill-badge">Git和GitHub</span>
+            <span class="skill-badge">Python入门</span>
+            <span class="skill-badge">C++算法</span>
+            <span class="skill-badge">Linux基础</span>
+            <span class="skill-badge">Minecraft服务器</span>
+            <span class="skill-badge">网站部署</span>
+        </div>
+        <p class="text-center text-muted mt-3">
+            <i class="fas fa-lightbulb"></i> 每天进步一点点，编程让世界更精彩！
+        </p>
+    </section>
+
+    <!-- 项目展示 -->
+    <section class="container my-5">
+        <h2 class="text-center mb-5"><i class="fas fa-project-diagram"></i> 我的小项目</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card project-card h-100">
+                    <div class="card-body text-center">
+                        <div style="font-size: 48px; color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h5 class="card-title">第一个网站</h5>
+                        <p class="card-text">用GitHub Pages搭建的个人主页，正在学习中！</p>
+                        <a href="https://lujunyu-china.github.io" class="btn btn-outline-primary">
+                            <i class="fas fa-external-link-alt"></i> 去看看
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card project-card h-100">
+                    <div class="card-body text-center">
+                        <div style="font-size: 48px; color: var(--secondary); margin-bottom: 15px;">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h5 class="card-title">MC服务器</h5>
+                        <p class="card-text">学习用虚拟机搭建Minecraft服务器，和朋友们一起玩！</p>
+                        <button class="btn btn-outline-primary" onclick="alert('正在建设中...')">
+                            <i class="fas fa-hammer"></i> 建设中
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card project-card h-100">
+                    <div class="card-body text-center">
+                        <div style="font-size: 48px; color: #ff9a00; margin-bottom: 15px;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h5 class="card-title">算法学习</h5>
+                        <p class="card-text">记录算法题目的解题思路，锻炼逻辑思维能力。</p>
+                        <button class="btn btn-outline-primary" onclick="alert('代码整理中...')">
+                            <i class="fas fa-book-open"></i> 学习笔记
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习格言 -->
+    <section class="container my-5">
+        <div class="alert alert-info text-center" style="border-radius: 15px;">
+            <h4><i class="fas fa-quote-left"></i> 我的学习格言</h4>
+            <p class="mb-0">
+                "编程就像搭积木，一行行代码堆砌出神奇的世界。<br>
+                不怕困难，每天进步，小学生也能成为编程小高手！"
+            </p>
+        </div>
+    </section>
+
     <!-- 页脚 -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-4 mt-5">
         <div class="container text-center">
-            <p>© 2026 lujunyu-China</p>
-            <p>访问次数：<span id="visitor-count">1000</span></p>
+            <p><i class="fas fa-copyright"></i> 2024 卢俊羽的小小世界</p>
+            <p>
+                <i class="fas fa-school"></i> XX小学 | 
+                <i class="fas fa-heart"></i> 编程爱好者 | 
+                <i class="fas fa-rocket"></i> 未来程序员
+            </p>
+            <p class="small">网站访问次数：<span id="visitor-count">1</span>（你是第一个访客！）</p>
+            <div class="mt-3">
+                <button class="btn btn-sm btn-outline-light" onclick="addVisitor()">
+                    <i class="fas fa-thumbs-up"></i> 点个赞
+                </button>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 简单的访客计数
+        let visitors = localStorage.getItem('visitors') || 1;
+        document.getElementById('visitor-count').textContent = visitors;
+        
+        function addVisitor() {
+            visitors++;
+            document.getElementById('visitor-count').textContent = visitors;
+            localStorage.setItem('visitors', visitors);
+            alert('谢谢你！ 👍');
+        }
+        
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎉 欢迎来到卢俊羽的个人主页！');
+            console.log('💡 提示：小学生编程，大大梦想！');
+        });
+    </script>
 </body>
 </html>
