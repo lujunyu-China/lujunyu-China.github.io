@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 博客 - lujunyu-China</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            min-height: 100vh;
+        }
+        
+        .blog-header {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .blog-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .blog-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .blog-excerpt {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .read-more:hover {
+            color: var(--primary);
+        }
+        
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-home:hover {
+            background: rgba(0,0,0,0.4);
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .tag-programming {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .tag-game {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .tag-learning {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .no-blogs {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+        }
+        
+        .no-blogs i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #dee2e6;
+        }
+        
+        .blog-stats {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- 博客头部 -->
+    <header class="blog-header">
+        <a href="../index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i> 返回首页
+        </a>
+        <div class="container">
+            <h1 class="display-4"><i class="fas fa-blog"></i> 我的博客</h1>
+            <p class="lead">记录编程学习的点点滴滴，分享有趣的技术发现</p>
+        </div>
+    </header>
+    
+    <!-- 博客内容 -->
+    <main class="container">
+        <!-- 统计信息 -->
+        <div class="blog-stats">
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <h3 style="color: var(--primary);" id="total-blogs">3</h3>
+                    <p class="text-muted">总文章数</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h3 style="color: var(--secondary);" id="total-words">0</h3>
+                    <p class="text-muted">总字数</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h3 style="color: #ff9900;" id="total-views">0</h3>
+                    <p class="text-muted">总阅读量</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 博客列表 -->
+        <div id="blog-list">
+            <!-- 博客文章将通过JavaScript动态加载 -->
+        </div>
+        
+        <!-- 没有博客时的提示 -->
+        <div id="no-blogs" class="no-blogs" style="display: none;">
+            <i class="fas fa-feather-alt"></i>
+            <h3>还没有博客文章</h3>
+            <p>正在努力学习中，很快就会有新文章！</p>
+        </div>
+        
+        <!-- 回到顶部按钮 -->
+        <div class="text-center my-5">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                    class="btn btn-outline-primary">
+                <i class="fas fa-arrow-up"></i> 回到顶部
+            </button>
+        </div>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p><i class="fas fa-copyright"></i> 2026 lujunyu-China</p>
+            <p>
+                <i class="fas fa-school"></i> NNMZPS | 
+                <i class="fas fa-heart"></i> 编程爱好者 | 
+                <i class="fab fa-qq"></i> QQ：3839653829
+            </p>
+            <p class="small">博客访问次数：<span id="visit-count">1</span></p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 博客数据
+        const blogs = [
+            {
+                id: 1,
+                title: "创建我的第一个GitHub网站",
+                filename: "1.html",
+                excerpt: "记录从零开始搭建个人网站的完整过程，分享学习HTML、CSS和GitHub Pages的经验心得。",
+                tags: ["GitHub", "HTML", "CSS", "学习"],
+                date: "2026-01-03",
+                wordCount: 1200,
+                readTime: "5分钟",
+                views: 15
+            },
+            {
+                id: 2,
+                title: "洛谷P1001题解",
+                filename: "2.html",
+                excerpt: "详细讲解洛谷P1001题目的解法和思路。",
+                tags: ["洛谷", "简单输入输出", "C++", "入门题"],
+                date: "2026-01-03",
+                wordCount: 1800,
+                readTime: "8分钟",
+                views: 8
+            }
+        ];
+        
+        // 加载博客列表
+        function loadBlogList() {
+            const blogList = document.getElementById('blog-list');
+            const noBlogs = document.getElementById('no-blogs');
+            
+            if (blogs.length === 0) {
+                blogList.style.display = 'none';
+                noBlogs.style.display = 'block';
+                return;
+            }
+            
+            let html = '';
+            blogs.forEach(blog => {
+                html += `
+                    <div class="blog-card">
+                        <h2 class="blog-title">${blog.title}</h2>
+                        <div class="blog-meta">
+                            <i class="far fa-calendar"></i> ${blog.date} 
+                            <i class="far fa-clock ms-3"></i> ${blog.readTime}
+                            <i class="fas fa-eye ms-3"></i> ${blog.views}次阅读
+                            <i class="fas fa-file-word ms-3"></i> ${blog.wordCount}字
+                        </div>
+                        <div class="tags mb-3">
+                            ${blog.tags.map(tag => `<span class="tag tag-${getTagClass(tag)}">${tag}</span>`).join('')}
+                        </div>
+                        <p class="blog-excerpt">${blog.excerpt}</p>
+                        <a href="${blog.filename}" class="read-more">
+                            阅读全文 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                `;
+            });
+            
+            blogList.innerHTML = html;
+            
+            // 更新统计信息
+            updateStats();
+        }
+        
+        // 更新统计信息
+        function updateStats() {
+            const totalWords = blogs.reduce((sum, blog) => sum + blog.wordCount, 0);
+            const totalViews = blogs.reduce((sum, blog) => sum + blog.views, 0);
+            
+            document.getElementById('total-blogs').textContent = blogs.length;
+            document.getElementById('total-words').textContent = totalWords;
+            document.getElementById('total-views').textContent = totalViews;
+        }
+        
+        // 根据标签获取CSS类
+        function getTagClass(tag) {
+            const tagMap = {
+                '编程': 'learning',
+                '算法': 'learning',
+                '学习': 'learning',
+                'GitHub': 'programming',
+                'HTML': 'programming',
+                'CSS': 'programming',
+                'C++': 'programming',
+                'Minecraft': 'game',
+                '游戏': 'game',
+                '服务器': 'programming',
+                'Linux': 'programming'
+            };
+            return tagMap[tag] || 'learning';
+        }
+        
+        // 访问计数
+        let visitCount = localStorage.getItem('blog_visits') || 1;
+        document.getElementById('visit-count').textContent = visitCount;
+        visitCount++;
+        localStorage.setItem('blog_visits', visitCount);
+        
+        // 页面加载
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBlogList();
+            
+            // 动画效果
+            const blogCards = document.querySelectorAll('.blog-card');
+            blogCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+            
+            console.log('📚 博客首页加载完成！');
+            console.log(`👦 共有 ${blogs.length} 篇博客文章`);
+        });
+    </script>
+</body>
+</html>
